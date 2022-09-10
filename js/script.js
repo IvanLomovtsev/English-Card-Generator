@@ -1,6 +1,7 @@
 let word = document.querySelector('.word');
 let transcription = document.querySelector('.transcription');
 let translate = document.querySelector('.translate');
+let num = 0;
 
 function getNewWord() {
   const dectinary = 'json/dectinary.json';
@@ -26,7 +27,8 @@ function convert() {
     html2canvas(document.querySelector("#capture")).then(canvas => {
                  // Сохраняем содержимое холста как файл и скачиваем
       canvas.toBlob(function(blob) {
-         saveAs(blob, "hangge.png");
+        num++;
+        saveAs(blob, "card"+num+".png");
       });
     });
   }
